@@ -16,22 +16,17 @@
     <script src="lib/angular-1.5.8/angular-resource.min.js"></script>
   </head>
   <body id="corpo" ng-controller="primeiroController">
-    
-    <div ng-init="mySwitch=true">
-        <p>
-            <button ng-disabled="mySwitch">Click me!</button>
-        </p>
 
-        <input type="checkbox" ng-model="mySwitch" />
+    <input type="text" ng-value="100" ng-model="codComentario">
+    <button  ng-click="getPorId()"> Buscar por id </button>
+    <hr />
 
-        {{ mySwitch }}
-    </div>
+    <input type="text" ng-value="100" >
+    <button ng-click="getPorTodos"> Buscar todos</button>
+    <hr />
 
-    <p ng-show="true">Mostrando</p>
-    <p ng-show="false">Escondeu</p>
-
-    <div ng-init="hour=13">
-        <p ng-show="hour > 12">Mostrando horas</p>
+    <div>
+        {{objetoComentario}}
     </div>
    
   </body>

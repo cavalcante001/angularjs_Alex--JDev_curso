@@ -1,16 +1,14 @@
 app.controller("primeiroController", [
   "$scope",
-  function ($scope) {
-    $scope.user = { meuNome: "Paulo", meuSobrenome: "Cavalcante" };
-    
-    $scope.contador = 0;
+  "$resource",
+  function ($scope, $resource) {
+    comentarios = $resource("https://jsonplaceholder.typicode.com/comments/:codComentario");
 
-    $scope.addAcontador = function () {
-      console.log(document.getElementById("corpo"));
-      $scope.contador++;
+    $scope.getPorId = function() {
+      comentarios.get({codComentario : $scope.codComentario}, function(data) {
+        $scope.objetoComentario = data;
+      })
     };
-
-    $scope.pessoas = ["ana", "mario", "josé"];
   },
 ]);
 
