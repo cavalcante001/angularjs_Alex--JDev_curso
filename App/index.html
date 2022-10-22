@@ -9,50 +9,15 @@
     <script src="lib/angular-1.5.8/angular.min.js"></script>
     <script src="lib/angular-1.5.8/angular-route.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/directives/w3TestDirective.js"></script>
 </head>
 <body id="corpo">
+    <div w3-test-directive></div>
 
+    <form name="myForm">
+        <input type="email" name="myAddress" ng-model="text">
+        <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span> 
+    </form>
 
-    <h1>Expressões 1</h1>
-    <p>{{ 5 + 5 }}</p>
-
-    <h1>Expressões 2</h1>
-    <div ng-init="myCol='red'">
-        <input style="background-color: {{myCol}}" ng-model="myCol">
-    </div>
-
-    <h1>Expressões 3</h1>
-    <div ng-init="valor=2; cota=5">
-        <p>Total em dolar: {{ valor * cota }}</p>
-    </div>
-
-    <h1>Expressões 4</h1>
-    <div ng-init="quantity=1;cost=5">
-        <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
-    </div>
-
-    <h1>Expressões 5 Strings</h1>
-    <div ng-init="firstname='Jhon'; lastName='Doe'">
-        <p>Meu nome é {{ firstname + " " + lastName }}</p>
-    </div>
-
-    <h1>AngularJS Objects</h1>
-    <div ng-init="person={firstName='Jhon', lastName='Doe'}">
-        <p>Meu nome é: {{ lastName }}</p>
-    </div>
-
-    <div ng-init="person{firstName: 'Jhon', lastName: 'Doe'}">
-        <p>Meu nome é: <span ng-bind="lastName"></span></p>
-    </div>
-
-    <h1>AngularJS arrays</h1>
-
-    <div ng-init="points=[1,15,19,2,40]">
-        <p>Resultado: {{ points[2] }} </p>
-    </div>
-
-    <div ng-init="points=[1,15,19,2,40]">
-        <p>Resultado: <span ng-bind="points[2] + 2"></span> </p>
-    </div>
 </body>
 </html>
