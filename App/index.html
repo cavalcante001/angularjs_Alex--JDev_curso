@@ -7,27 +7,16 @@
     <title>Angular JS</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="lib/angular-1.5.8/angular.min.js"></script>
+    <script src="lib/angular-1.5.8/angular-route.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/controller/primeiroController.js"></script>
+    <script src="js/config/routeConfig.js"></script>
+    <script src="js/controller/listController.js"></script>
+    <script src="js/controller/editController.js"></script>
+    <script src="js/controller/newController.js"></script>
 </head>
-<body ng-controller="primeiroController as user" id="corpo">
-    <input type="text" placeholder="Digite seu nome" ng-model="user.meuNome" />
-    <br/>
-    <br/>
-    <input type="text" placeholder="Digite seu sobrenome" ng-model="user.meuSobrenome" />
+<body id="corpo">
 
-    <br><br><br>
-    <a href="#" ng-click="addAcontador();">Add</a>
-    <br />
-    <h1>Contador: {{contador}}</h1>
-
-    <h1>Olá {{user.meuNome}} {{user.meuSobrenome}}, tudo bem?</h1>
-
-    <hr />
-    <br>
-    <h1>Loop</h1>
-    <ul>
-        <li ng-repeat="nome in pessoas">{{ nome }}</li>
-    </ul>
+    <h1>Rota Deep Linking Exemplo</h1>
+    <div ng-view></div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-angular.module('loja').controller('primeiroController', ['$scope', function($scope) {
+app.controller('primeiroController', ['$scope', function($scope) {
     $scope.user = {meuNome: 'Paulo', meuSobrenome: 'Cavalcante'};
 
     $scope.contador = 0;
