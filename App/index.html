@@ -14,20 +14,12 @@
     <script src="js/controller/personCtrl.js"></script>
     <script src="lib/angular-1.5.8/i18n/angular-locale_pt-br.js"></script>
 </head>
-<body id="corpo">
-    <div ng-controller="localizacao">
-        <p>O url desta página é: </p>
-        <h3>{{myUrl}}</h3>
-    </div>
+<body id="corpo" ng-controller="pegarResposta">
+    <button ng-click="pegarResposta()">FAZER REQUISIÇÃO</button>
 
-    <div ng-controller="controllerTimeOut">
-        <p>Timeout services:</p>
-        <h1>{{ timermsg }}</h1>
-    </div>
-
-    <div ng-controller="controllerIntervalo">
-        <p>O tempo é:</p>
-        <h1>{{intervalo}}</h1>
-    </div>
+    <p>Trabalhando com servidor JSON</p>
+    <ul>
+        <li ng-repeat="x in lista">{{ x.name }}</li>
+    </ul>
 </body>
 </html>
