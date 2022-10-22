@@ -14,16 +14,19 @@
     <script src="js/controller/personCtrl.js"></script>
     <script src="lib/angular-1.5.8/i18n/angular-locale_pt-br.js"></script>
   </head>
-  <body id="corpo" ng-controller="pegarResposta">
+  <body id="corpo" ng-controller="primeiroController">
     <button ng-click="pegarResposta()">FAZER REQUISIÇÃO</button>
 
-    <p>Trabalhando com servidor JSON</p>
+    <select ng-model="selectedName" ng-options="x for x in pessoas">
 
-    <table>
-      <tr ng-repeat="x in lista">
-        <td ng-if="$odd" style="background-color: lime">{{($index+1) + ' '+x.name}}</td>
-        <td ng-if="$even">{{ ($index+1) + ' ' + x.name}}</td>
-      </tr>
-    </table>
+    </select>
+
+    <select>
+        <option ng-repeat="x in pessoas" value="{{x.nome}}">{{x}}</option>
+    </select>
+
+    <h1>Selecionado: {{selectedName}}</h1>
+
+   
   </body>
 </html>

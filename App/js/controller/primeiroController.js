@@ -2,7 +2,7 @@ app.controller("primeiroController", [
   "$scope",
   function ($scope) {
     $scope.user = { meuNome: "Paulo", meuSobrenome: "Cavalcante" };
-
+    
     $scope.contador = 0;
 
     $scope.addAcontador = function () {
