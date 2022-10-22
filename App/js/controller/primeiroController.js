@@ -4,6 +4,11 @@ app.controller("primeiroController", [
   function ($scope, $resource) {
     comentarios = $resource("https://jsonplaceholder.typicode.com/comments/:codComentario");
 
+    $scope.myFunc = function($e) {
+        console.log($e);
+        $scope.showMe = !$scope.showMe;
+    }
+
     $scope.getPorId = function() {
       comentarios.get({codComentario : $scope.codComentario}, function(data) {
         $scope.objetoComentario = data;

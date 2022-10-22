@@ -16,18 +16,17 @@
     <script src="lib/angular-1.5.8/angular-resource.min.js"></script>
   </head>
   <body id="corpo" ng-controller="primeiroController">
+    <h1 ng-mousemove="count = count + 1">Mouse over me</h1>
+    <h1>{{ count }}</h1>
 
-    <input type="text" ng-value="100" ng-model="codComentario">
-    <button  ng-click="getPorId()"> Buscar por id </button>
-    <hr />
-
-    <input type="text" ng-value="100" >
-    <button ng-click="getPorTodos"> Buscar todos</button>
-    <hr />
-
-    <div>
-        {{objetoComentario}}
+    <div ng-controller="primeiroController">
+      <button ng-click="myFunc($event)">Clique me!</button>
+      <div ng-show="showMe">
+        <h1>Menu:</h1>
+        <div>Pizza</div>
+        <div>Pizza</div>
+        <div>Pizza</div>
+      </div>
     </div>
-   
   </body>
 </html>
