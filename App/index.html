@@ -13,20 +13,26 @@
     <script src="js/controller/primeiroController.js"></script>
     <script src="js/controller/personCtrl.js"></script>
     <script src="lib/angular-1.5.8/i18n/angular-locale_pt-br.js"></script>
+    <script src="lib/angular-1.5.8/angular-resource.min.js"></script>
   </head>
   <body id="corpo" ng-controller="primeiroController">
-    <button ng-click="pegarResposta()">FAZER REQUISIÇÃO</button>
+    
+    <div ng-init="mySwitch=true">
+        <p>
+            <button ng-disabled="mySwitch">Click me!</button>
+        </p>
 
-    <select ng-model="selectedName" ng-options="x for x in pessoas">
+        <input type="checkbox" ng-model="mySwitch" />
 
-    </select>
+        {{ mySwitch }}
+    </div>
 
-    <select>
-        <option ng-repeat="x in pessoas" value="{{x.nome}}">{{x}}</option>
-    </select>
+    <p ng-show="true">Mostrando</p>
+    <p ng-show="false">Escondeu</p>
 
-    <h1>Selecionado: {{selectedName}}</h1>
-
+    <div ng-init="hour=13">
+        <p ng-show="hour > 12">Mostrando horas</p>
+    </div>
    
   </body>
 </html>
